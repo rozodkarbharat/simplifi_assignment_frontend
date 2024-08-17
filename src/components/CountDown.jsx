@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 const CountDown = ({startCountdown,isActive, setappOTP}) => {
-  const [seconds, setSeconds] = useState(30);
+  const [seconds, setSeconds] = useState(59);
   
 
   useEffect(() => {

@@ -8,14 +8,14 @@ function App() {
   const [isCompleted, setisCompleted] = useState(false)
 
   function PageChange(value) {
-    setisCompleted(()=>isCompleted)
+    setisCompleted(()=>value)
   }
 
   return (
     <div className="App">
      {
       !isCompleted ? <><div className="left-img"></div>
-      <RegistrationForm/></> :<ThankYouPage/>
+      <RegistrationForm PageChange={PageChange} /></> :<ThankYouPage PageChange={PageChange}/>
      } 
     </div>
   );

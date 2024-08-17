@@ -10,6 +10,8 @@
     text-align: center;
     padding: 20px;
     width: 100%;
+    background-image: url("/public/bgImg.jpg"); 
+    background-size: cover;
   }
   
   .heading {

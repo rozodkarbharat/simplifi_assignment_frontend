@@ -18,7 +18,7 @@ const errorNitification = (message) =>
 
 let titles = ["Mr", "Mrs", "Miss", "Dr", "Ms", "Prof"];
 
-const RegistrationForm = () => {
+const RegistrationForm = ({PageChange}) => {
   const [formData, setFormData] = useState({
     title: "",
     name: "",
@@ -89,7 +89,7 @@ const RegistrationForm = () => {
     }
     if (OTP > 0 && appOTP == OTP) {
       axios
-        .post("http://localhost:8000/create-user", { ...formData })
+        .post("https://simplifi-backend.onrender.com/create-user", { ...formData })
         .then((response) => {
           setisLoading(() => false);
           if (response.data && !response.data.status) {
@@ -102,6 +102,8 @@ const RegistrationForm = () => {
               mobileNumber: "",
               email: "",
             })
+            setOTP("")
+            PageChange(true)
             successNitification(response.data.message);
           }
         })
@@ -112,7 +114,7 @@ const RegistrationForm = () => {
     } else {
       setWrongOtpCount(() => WrongOtpCount-1)
       setisLoading(() => false);
-      errorNitification(`Invalid OTP. ${WrongOtpCount} attempts remaining.`);
+      errorNitification(`Invalid OTP. ${WrongOtpCount-1} attempts remaining.`);
     }
   };
 
@@ -142,7 +144,7 @@ const RegistrationForm = () => {
       let otp = Math.floor(100000 + Math.random() * 900000);
       setappOTP(() => otp);
       axios
-        .post("http://localhost:8000/verify-email", {
+        .post("https://simplifi-backend.onrender.com/verify-email", {
           email: formData.email,
           OTP: otp,
         })
@@ -186,7 +188,7 @@ const RegistrationForm = () => {
                 }`}
               />
               <span className={`${styles.span} ${
-                  errors.isdCode ? styles.errorColor : ""
+                  errors.title ? styles.errorColor : ""
                 }`}>Mr./Mrs.*</span>
             </label>
             <datalist id="titles">
@@ -196,7 +198,7 @@ const RegistrationForm = () => {
                 </option>
               ))}
             </datalist>
-            {errors.isdCode && (
+            {errors.title && (
               <div className={styles.error}>{errors.isdCode}</div>
             )}
           </div>
@@ -213,7 +215,7 @@ const RegistrationForm = () => {
               }`}
             />
             <span className={`${styles.span} ${
-                  errors.isdCode ? styles.errorColor : ""
+                  errors.name ? styles.errorColor : ""
                 }`}>Name*</span>
             {errors.name && <div className={styles.error}>{errors.name}</div>}
           </label>
@@ -262,7 +264,7 @@ const RegistrationForm = () => {
               }`}
             />
             <span className={`${styles.span} ${
-                  errors.isdCode ? styles.errorColor : ""
+                  errors.mobileNumber ? styles.errorColor : ""
                 }`}>Mobile Number*</span>
             {errors.mobileNumber && (
               <div className={styles.error}>{errors.mobileNumber}</div>
@@ -283,7 +285,7 @@ const RegistrationForm = () => {
             // className={styles.input}
           />
           <span className={`${styles.span} ${
-                  errors.isdCode ? styles.errorColor : ""
+                  errors.title ? styles.errorColor : ""
                 }`}>Email ID*</span>
           {errors.email && <div className={styles.error}>{errors.email}</div>}
         </label>
@@ -304,14 +306,14 @@ const RegistrationForm = () => {
               type="number"
               placeholder=" "
               className={`${styles.input} ${
-                errors.title ? styles.errorBorder : ""
+                errors.otp ? styles.errorBorder : ""
               }`}
               // className={styles.input}
             />
             <span className={`${styles.span} ${
-                  errors.isdCode ? styles.errorColor : ""
+                  errors.otp ? styles.errorColor : ""
                 }`}>OTP*</span>
-            {/* {errors.email && <div className={styles.error}>{errors.email}</div>} */}
+            {/* {errors.otp && <div className={styles.error}>{errors.email}</div>} */}
           </label>
           {}
           {!appOTP ? (
