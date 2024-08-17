@@ -1,5 +1,5 @@
-Fronend URL (https://coruscating-brioche-96e34a.netlify.app)
-Backend Repository URL (https://simplifi-backend.onrender.com)
+- Fronend URL (https://coruscating-brioche-96e34a.netlify.app)
+- Backend Repository URL (https://simplifi-backend.onrender.com)
 
 
 Simplifi Assignment
