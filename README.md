@@ -4,16 +4,16 @@ Backend URL (https://simplifi-backend.onrender.com)
 Simplifi Assignment
 
 ## Validations
-All fields required
-Mobile Number should be a number and length should be 6 to 12 digits only
-mobile number cannot start with zero
-and email should be a valid email
+* All fields required
+* Mobile Number should be a number and length should be 6 to 12 digits only
+* mobile number cannot start with zero
+* email should be a valid email
 
 
-##Checks
-Email Should not exist already
-Only 5 attempts to write an OTP
-after 60 seconds OTP can be sent again
+## Checks
+* Email Should not exist already
+* Only 5 attempts to write an OTP
+* after 60 seconds OTP can be sent again
 
 ## Screenshots
 
