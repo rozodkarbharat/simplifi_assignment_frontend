@@ -1,0 +1,296 @@
+.formContainer {
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #f9f9f9;
+    width: 50%;
+    background-color: white;
+}
+
+.logoImg {
+    width: 110px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.formHeading {
+    font-size: 18px;
+    font-family: Montserrat, sans-serif !important;
+    font-weight: 500;
+    margin-bottom: 0px;
+    letter-spacing: 1px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    max-width: 480px;
+    color: #beb6c4;
+    border-radius: 8px;
+    box-sizing: border-box;
+    /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); */
+    margin-top: 20px;
+}
+
+.formGroup {
+    margin-bottom: 15px;
+    width: 100px;
+}
+
+label {
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.input {
+    padding: 12px;
+    font-size: 14px;
+    width: 100%;
+    max-width: 480px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.button {
+    padding: 10px 0px;
+    background-color: #ff9800;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 15px;
+    border-radius: 30px;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 440px;
+}
+
+.error {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+/* Apply red border on validation error */
+
+
+
+/* YourComponent.module.css */
+
+.label {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.span {
+    padding: 10px;
+    pointer-events: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: 0.4s;
+    opacity: 0.5;
+    color: black;
+}
+
+.errorspan {
+    padding: 10px;
+    pointer-events: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: 0.4s;
+    opacity: 0.5;
+    color: red;
+}
+
+/* When input is focused, or the placeholder is not being displayed, change the border to blue */
+.input:focus,
+.input:not(:placeholder-shown) {
+    outline: none;
+    border: 2px solid #ed9323;
+}
+
+/* When input is focused, or the placeholder is not being displayed, change the placeholder size, position and color */
+.input:focus+.span,
+.input:not(:placeholder-shown)+.span {
+    opacity: 1;
+    background-color: white;
+    color: #ed9323;
+    transform: scale(0.75) translateY(-65%);
+    padding: 0px 5px;
+    font-weight: 600;
+}
+
+.flexBox {
+    display: flex;
+    align-items: top;
+    width: 100%;
+    gap: 40px;
+    /* border: 1px solid green; */
+}
+
+.otpBox {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 480px;
+}
+
+.otpBtn {
+    padding: 10px 0px;
+    background-color: #ff9800;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 15px;
+    border-radius: 30px;
+    width: 100%;
+}
+
+.resendBtn {
+    text-align: right;
+    width: 100%;
+    color: blue;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+
+/* Responsive styling */
+@media (max-width: 850px) {
+    .formContainer {
+        margin: auto;
+        justify-content: center;
+    }
+
+    .form {
+        width: 100%;
+        padding: 15px;
+        margin-top: 20px;
+    }
+
+    .otpBox {
+        margin-top: 20px;
+        width: 100%;
+        max-width: 440px;
+    }
+
+    .formContainer {
+        width: 90%;
+    }
+    .selectinput{
+        padding: 0px 5px;
+        width: 80px;
+    }
+}
+
+.selectinput {
+    padding: 0px 12px;
+    font-size: 14px;
+    width: 100%;
+    max-width: 440px;
+    border: 1px solid #b9b3b3;
+    border-radius: 4px;
+    height: 40px;
+    width: 100px;
+    padding-left: 20px;
+    color: #b9b3b3;
+}
+
+.selectinput:focus,
+.selectinput:not(:placeholder-shown) {
+    outline: none;
+    border: 2px solid #ed9323;
+    color: black;
+    font-weight: 400;
+}
+
+.selectinput:focus+.span {
+    opacity: 1;
+    background-color: white;
+    transform: scale(0.75) translateY(-5px) translateX(-15px);
+    padding: 0px 2px 0 15px;
+    font-weight: 600;
+    color: #ed9323;
+}
+
+.selectinput:focus+.selectinput{
+    color: #b9b3b3;
+}
+
+.selectinput:focus+.span{
+    color: #ed9323;
+}
+
+.selectinput:focus {
+    border: 2px solid #ed9323;
+    width: 100px;
+    
+}
+
+
+.selectinput:not(:placeholder-shown) + .span{
+    opacity: 1;
+    background-color: white;
+    transform: scale(0.75) translateY(-5px) translateX(-15px);
+    padding: 0px 2px 0 15px;
+    font-weight: 600;
+    border-color: #b9b3b3;
+    color: #ed9323;
+}
+
+.accountText{
+    font-size: 16px;
+    font-family: Montserrat, sans-serif !important;
+    font-weight: 500;
+    margin-bottom: 0px;
+    letter-spacing: 1px;
+    margin-top: 40px;
+}
+
+.signin{
+    
+    color: blue;cursor: pointer;
+}   
+
+
+.errorBorder {
+    border-color: red !important;
+    color: red;
+}
+
+.errorColor{
+    color: red;
+}
+
+.selectinput:not(:placeholder-shown) + .errorColor, .selectinput:focus +.errorColor{
+    color: red;
+}
+
+.input:not(:placeholder-shown) + .errorColor, .input:focus +.errorColor{
+    color: red;
+}
+
+
+/* Chrome, Safari, Edge, Opera */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+/* Internet Explorer 10+ */
+input[type="number"] {
+    -ms-appearance: textfield;
+}
