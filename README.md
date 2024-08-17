@@ -1,4 +1,4 @@
-Backend URL (https://simplifi-backend.onrender.com)
+Backend Repository URL (https://simplifi-backend.onrender.com)
 
 
 Simplifi Assignment
