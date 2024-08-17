@@ -2,6 +2,7 @@ Backend Repository URL (https://simplifi-backend.onrender.com)
 
 
 Simplifi Assignment
+# Registration page
 
 ## Validations
 * All fields required
